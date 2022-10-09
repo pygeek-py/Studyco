@@ -5,7 +5,6 @@ certifi==2022.6.15
 cffi==1.15.1
 charset-normalizer==2.0.12
 cryptography==37.0.2
-dataclasses==0.8
 defusedxml==0.7.1
 dj-database-url==0.5.0
 Django==3.2.13
