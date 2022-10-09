@@ -1,0 +1,392 @@
+{% extends 'base/base.html' %}
+
+{% block body %}
+<style type="text/css">
+	* {
+		margin: 0;
+	}
+	body {
+		background-color: #1f2641;
+	}
+	.container {
+		width: 100%;
+		max-width: 390px;
+		height: fit-content;
+		margin: auto;
+		box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3);
+		font-family: sans-serif;
+		margin-top: 1rem;
+		background-color: #1f2641;
+	}
+	.head {
+		background-color: #2e3267;
+		color: white;
+		width: 100%;
+		height: 9vh;
+		text-align: center;
+	}
+	.first {
+		font-size: 1.2rem;
+		padding-top: 0.7rem;
+		opacity: 0.8;
+	}
+	.pat {
+		font-size: 0.8rem;
+		font-weight: lighter;
+		padding-left: 1.3em;
+		color: white;
+		opacity: 0.6;
+	}
+	.pad {
+		color: green;
+		opacity: 0.8;
+	}
+	.pass {
+		width: 70%;
+		height: 5vh;
+		margin-left: 1em;
+		background: transparent;
+		color: black;
+		font-size: 0.9rem;
+		border-radius: 5px;
+		border: 1px solid;
+		padding-left: 1rem;
+		border-color: #2e3267;
+	}
+	.but {
+		margin-left: 1em;
+		border-radius: 5px;
+		color: white;
+		opacity: 0.8;
+		border: none;
+		background-color: #2e3267;
+		height: max-content;
+		min-height: 37px;
+		width: 25%;
+		font-size: 1.1rem;
+		font-weight: 150px;
+	}
+	.her {
+		color: #2e3267;
+	}
+	.pate {
+		color: white;
+		opacity: 0.7;
+	}
+
+	/* nav */
+
+	.nav {
+		width: 100%;
+		height: 16vh;
+		background-color: #2e3267;
+	}
+
+	.nav1 {
+		width: 85%;
+		height: fit-content;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 0.6rem;
+	}
+	.nav_left {
+		display: flex;
+		align-items: center;
+		width: 25%;
+	}
+	.mag {
+		height: 7vh;
+		cursor: pointer;
+	}
+	.in_nav {
+		width: 40%;
+		height: 9vh;
+		border: none;
+		background: #424890;
+		padding-left: 2rem;
+		font-size: 0.8rem;
+		opacity: 0.7;
+	}
+	.round {
+		width: 2.5rem;
+		height: 7vh;
+		border: 2px solid blue;
+		border-radius: 50%;
+		border-color: blue;
+	}
+	.nav_right {
+		display: flex;
+		align-items: center;
+		width: 25%;
+		margin-left: 7rem;
+	}
+	.h_nav {
+		color: white;
+		font-size: 1.2rem;
+		padding-left: 0.3rem;
+		cursor: pointer;
+	}
+	.p_nav {
+		color: white;
+		font-size: 1.2rem;
+		padding-left: 0.3rem;
+		opacity: 0.2;
+		cursor: pointer;
+	}
+	#fac {
+		font-size: 2em;
+		color: grey;
+	}
+	.input-icons i {
+            position: absolute;
+        }
+          
+    .input-icons {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-left: 7rem;
+        margin-top: 0.4rem;
+    }
+          
+    .icon {
+    	padding-top: 0.7rem;
+    	padding-left: 0.4rem;
+        font-size: 1.2rem;
+        color: white;
+        opacity: 0.5;
+        font-weight: lighter;
+        cursor: pointer;
+    }
+          
+    .in_nav {
+		width: 70%;
+		height: 9vh;
+		border: none;
+		background: #424890;
+		padding-left: 2rem;
+		font-size: 1rem;
+		opacity: 0.6;
+		color: white;
+	}
+
+
+
+	/* phone media */
+	@media only screen and (orientation: portrait) {
+		* {
+		margin: 0;
+	}
+	body {
+		background-color: #1f2641;
+	}
+	.container {
+		width: 100%;
+		max-width: 390px;
+		height: fit-content;
+		margin: auto;
+		box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3);
+		font-family: sans-serif;
+		margin-top: 1rem;
+		background-color: #1f2641;
+	}
+	.head {
+		background-color: #2e3267;
+		color: white;
+		width: 100%;
+		height: 9vh;
+		text-align: center;
+	}
+	.first {
+		font-size: 1.2rem;
+		padding-top: 0.7rem;
+		opacity: 0.8;
+	}
+	.pat {
+		font-size: 0.8rem;
+		font-weight: lighter;
+		padding-left: 1.3em;
+		color: white;
+		opacity: 0.6;
+	}
+	.pad {
+		color: green;
+		opacity: 0.8;
+	}
+	.pass {
+		width: 70%;
+		height: 5vh;
+		margin-left: 1em;
+		background: transparent;
+		color: black;
+		font-size: 0.9rem;
+		border-radius: 5px;
+		border: 1px solid;
+		padding-left: 1rem;
+		border-color: #2e3267;
+	}
+	.but {
+		margin-left: 1em;
+		border-radius: 5px;
+		color: white;
+		opacity: 0.8;
+		border: none;
+		background-color: #2e3267;
+		height: max-content;
+		min-height: 37px;
+		width: 25%;
+		font-size: 1.1rem;
+		font-weight: 150px;
+	}
+	.her {
+		color: #2e3267;
+	}
+	.pate {
+		color: white;
+		opacity: 0.7;
+	}
+
+	/* nav */
+
+	.nav {
+		width: 100%;
+		height: 11vh;
+		background-color: #2e3267;
+	}
+
+	.nav1 {
+		width: 100%;
+		height: fit-content;
+		margin: auto;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding-top: 0.6rem;
+	}
+	.nav_left {
+		display: flex;
+		align-items: center;
+		width: 15%;
+		margin-left: 0.2rem;
+	}
+	.mag {
+		height: 7vh;
+		cursor: pointer;
+	}
+	.round {
+		width: 2.5rem;
+		height: 7vh;
+		border: 2px solid blue;
+		border-radius: 50%;
+		border-color: blue;
+	}
+	.nav_right {
+		display: flex;
+		align-items: center;
+		width: 35%;
+		margin-left: 7rem;
+	}
+	.h_nav {
+		color: white;
+		font-size: 1.2rem;
+		padding-left: 0.3rem;
+		cursor: pointer;
+	}
+	.p_nav {
+		color: white;
+		font-size: 1.2rem;
+		padding-left: 0.3rem;
+		opacity: 0.2;
+		cursor: pointer;
+	}
+	#fac {
+		font-size: 2em;
+		color: grey;
+	}
+	.input-icons i {
+            position: absolute;
+        }
+          
+    .input-icons {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-left: 7rem;
+        margin-top: 0.4rem;
+        display: none;
+    }
+          
+    .icon {
+    	padding-top: 0.7rem;
+    	padding-left: 0.4rem;
+        font-size: 1.2rem;
+        color: white;
+        opacity: 0.5;
+        font-weight: lighter;
+        cursor: pointer;
+    }
+          
+    .in_nav {
+		width: 70%;
+		height: 9vh;
+		border: none;
+		background: #424890;
+		padding-left: 2rem;
+		font-size: 1rem;
+		opacity: 0.6;
+		color: white;
+	}
+
+	}
+</style>
+<div class="nav">
+	<div class="nav1">
+		<div class="nav_left">
+			<img src="/media/images/logo.svg" class="mag"></img>
+			<h2 class="h_nav">StudyPro</h2>
+		</div>
+		<div class="input-icons">
+			<i class="fa fa-search icon"></i>
+			<input type="text" class="in_nav" placeholder="search for rooms"></input>
+		</div>
+		<div class="nav_right">
+			<i class="fa fa-user-circle-o" id="fac"></i>
+			<p class="p_nav">Log in</p>
+		</div>
+	</div>
+</div>
+<body>
+<div class="container">
+<div class="head">
+<p class="first">LOGIN</p>
+</div>
+<br>
+	<center>
+		<p class="pad">Find Your Study Partner</p>
+	</center>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <label class="pat">username</label>
+        <br>
+        <input type="text" name="username" placeholder="username" class="pass"></input>
+		<br><br>
+        <label class="pat">password</label>
+        <br>
+       <input type="password" name="password" placeholder="password" class="pass"></input>
+       <br><br>
+       <input type="submit" name="login" value="Login" class="but">
+    </form>
+	<br>
+	<center>
+	<p class="pate">Haven't Signed Up Yet?</p>
+	<a href="{% url 'register' %}" class="her">register</a>
+	</center>
+</div>
+</body>
+{% endblock %}
+--color-bg: #1f2641;
+	--color-bg1: #2e3267;
+	--color-bg2: #424890;
+<br>
+    <h4 class="p_nav">or</h4>
+    <button class="but"><a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a></button>

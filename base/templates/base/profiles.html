@@ -1,0 +1,1143 @@
+{% extends 'base/base.html' %}
+
+{% block body %}
+<style type="text/css">
+* {
+		margin: 0;
+	}
+	body {
+		background-color: #1f2641;
+	}
+	body::-webkit-scrollbar {
+		width: 1vw;
+	}
+	body::-webkit-scrollbar-thumb {
+		background: #424890;
+	}
+	body::-webkit-scrollbar-track {
+		background: #2e3267;
+	}
+	a {
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	/* nav */
+
+	.nav {
+		width: 100%;
+		height: 16vh;
+		background-color: #2e3267;
+	}
+
+	.nav1 {
+		width: 85%;
+		height: fit-content;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 0.6rem;
+	}
+	.nav_left {
+		display: flex;
+		align-items: center;
+		width: 25%;
+	}
+	.mag {
+		height: 7vh;
+		cursor: pointer;
+	}
+	.in_nav {
+		width: 40%;
+		height: 9vh;
+		border: none;
+		background: #424890;
+		padding-left: 2rem;
+		font-size: 0.8rem;
+		opacity: 0.7;
+	}
+	.round {
+		width: 2.5rem;
+		height: 7vh;
+		border: 2px solid blue;
+		border-radius: 50%;
+		border-color: blue;
+	}
+	.nav_right {
+		display: flex;
+		align-items: center;
+		width: 25%;
+		margin-left: 7rem;
+	}
+	.h_nav {
+		color: white;
+		font-size: 1.2rem;
+		padding-left: 0.3rem;
+		cursor: pointer;
+	}
+	.p_nav {
+		color: white;
+		font-size: 0.9rem;
+		padding-left: 0.3rem;
+		opacity: 0.2;
+		cursor: pointer;
+	}
+	.p_navs {
+		color: green;
+		font-size: 1.1rem;
+		padding-left: 0.3rem;
+		cursor: pointer;
+	}
+	.hold {
+		display: flex;
+		flex-direction: column;
+	}
+	#fac {
+		font-size: 2em;
+		color: grey;
+	}
+	.input-icons i {
+            position: absolute;
+        }
+          
+    .input-icons {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-left: 7rem;
+        margin-top: 0.4rem;
+    }
+          
+    .icon {
+    	padding-top: 0.7rem;
+    	padding-left: 0.4rem;
+        font-size: 1.2rem;
+        color: white;
+        opacity: 0.5;
+        font-weight: lighter;
+        cursor: pointer;
+    }
+          
+    .in_nav {
+		width: 70%;
+		height: 9vh;
+		border: none;
+		background: #424890;
+		padding-left: 2rem;
+		font-size: 1rem;
+		opacity: 0.6;
+		color: white;
+	}
+
+
+
+	/* body main */
+
+	.every {
+		display: flex;
+		align-items: base-line;
+	}
+
+	.bodyleft {
+		width: 20%;
+		height: 30vh;
+		padding-left: 3rem;
+		padding-top: 2rem;
+		cursor: pointer;
+	}
+	.h_body {
+		color: #424890;
+		font-size: 1.2rem;
+		font-weight: lighter;
+		opacity: 0.8;
+		cursor: pointer;
+	}
+	.h_bodys {
+		color: blue;
+		font-size: 1.1rem;
+		font-weight: lighter;
+	}
+	.h_bods {
+		color: #424890;
+		font-size: 1.2rem;
+		font-weight: lighter;
+		cursor: pointer;
+	}
+	.btns {
+		border-radius: 3px;
+		color: blue;
+		border: none;
+		background-color: #2e3267;
+		height: 6vh;
+		width: max-width;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+	}
+	.leftside {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 90%;
+		margin-top: 2rem;
+	}
+	.bt {
+		border-radius: 3px;
+		color: #424890;
+		border: none;
+		background-color: #2e3267;
+		height: 6vh;
+		width: max-width;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+	}
+
+
+
+
+
+	/* middle side */
+
+	.middleside {
+		width: 50%;
+		height: 135vh;
+		overflow-y: scroll; 
+	}
+	.middleside::-webkit-scrollbar {
+		width: 0.7vw;
+	}
+	.middleside::-webkit-scrollbar-thumb {
+		background: #424890;
+	}
+	.middleside::-webkit-scrollbar-track {
+		background: #2e3267;
+	}
+	.give1 {
+		display: flex;
+		flex-direction: column;
+	}
+	.give_p {
+		color: #424890;
+		opacity: 0.7;
+		font-size: 1rem;
+	}
+	.give_h {
+		color: white;
+		opacity: 0.9;
+		font-size: 1.4rem;
+	}
+	.give {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 97%;
+		margin: auto;
+		margin-top: 2rem;
+	}
+	.bte {
+		border-radius: 3px;
+		color: #424890;
+		border: none;
+		background-color: blue;
+		height: 9vh;
+		width: max-width;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+	}
+	.give3 {
+		width: 98%;
+		height: max-content;
+		margin: auto;
+		margin-top: 2rem;
+	}
+	.givebox {
+		width: 92%;
+		height: 40vh;
+		background: #2e3267;
+		border-radius: 1rem;
+		padding-top: 0.8rem;
+		padding-left: 1.7rem;
+	}
+	.round {
+		width: 2.5rem;
+		height: 7vh;
+		border: none;
+		border-radius: 50%;
+		border-color: blue;
+		background-size: cover;
+	}
+	.giveflex {
+		display: flex;
+		align-items: center;
+		width: 50%;
+	}
+	.agaflex {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 95%;
+	}
+	.boxr {
+		color: white;
+		padding-top: 0.6rem;
+		font-size: 1.3rem;
+		font-weight: lighter;
+		opacity: 0.8;
+	}
+	.secbox {
+		width: 92%;
+		height: max-content;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.tiny {
+		width: 92%;
+		height: 0.4vh;
+		background: grey;
+		opacity: 0.3;
+		margin-top: 1rem;
+	}
+	.type1 {
+		display: flex;
+		align-items: center;
+		width: 50%;
+		padding-top: 0.7rem;
+		margin-right: 10rem;
+	}
+	.type {
+		width: 92%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.btu {
+		border-radius: 3px;
+		color: white;
+		border: none;
+		background-color: #424890;
+		height: 6vh;
+		width: max-width;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 2rem;
+		opacity: 0.7;
+	}
+
+	.desc {
+		width: 86%;
+		height: fit-content;
+		min-height: 5vh;
+		padding-top: 0.3rem;
+		padding-left: 0.5rem;
+		background: #1f2641;
+		margin-left: 0.3rem;
+		margin-top: 0.3rem;
+		border-radius: 0.5rem;
+	}
+
+
+	/* rightside */
+
+	.rightside {
+		width: 30%;
+		height: fit-content;
+		padding-top: 2rem;
+	}
+
+	.follow {
+		width: 95%;
+		margin: 0 auto;
+		height: 70vh;
+		background: #2e3267;
+		border-radius: 1rem;
+	}
+	.follows {
+		width: 95%;
+		margin: 0 auto;
+		height: fit-content;
+		background: #2e3267;
+		border-radius: 1rem;
+	}
+	.followh {
+		width: 100%;
+		height: 10vh;
+		background-color: #424890;
+	}
+	.thr {
+		width: 80%;
+		display: flex;
+		align-items: center;
+		margin-left: 0.5rem;
+		margin-top: 0.4rem;
+	}
+	.thre {
+		width: 98%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.btes {
+		border-radius: 3px;
+		color: #424890;
+		border: none;
+		background-color: blue;
+		height: 6vh;
+		width: 20%;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+
+	}
+	.take {
+		display: flex;
+		flex-direction: column;
+		width: 94%;
+	}
+	.bas {
+		width: 94%;
+		height: fit-content;
+		border-radius: 1rem;
+		border: 1px solid blue;
+		margin-top: 1rem;
+		margin-left: 0.5rem;
+	}
+	.gain {
+		font-size: 1rem;
+		opacity: 0.9;
+		color: white;
+	}
+	.spa {
+		font-size: 1rem;
+		opacity: 0.9;
+		color: green;
+	}
+	.com {
+		width: 86%;
+		height: 5vh;
+		padding-top: 0.3rem;
+		padding-left: 0.5rem;
+		background: #1f2641;
+		margin-left: 1.2rem;
+		margin-top: 0.3rem;
+		border-radius: 0.5rem;
+	}
+
+	/* about */
+
+	.givehead {
+		width: 96%;
+		height: fit-content;
+		margin-top: 2rem;
+	}
+	.lap1 {
+		width: 98%;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.lap2 {
+		width: 48%;
+	}
+	.lap3 {
+		width: 48%;
+	}
+	.roun {
+		width: 60%;
+		height: 25vh;
+		border-radius: 70%;
+	}
+	.boxre {
+		font-size: 1rem;
+		color: white;
+		opacity: 0.4;
+	}
+	.btese {
+		border-radius: 3px;
+		color: #424890;
+		border: none;
+		background-color: blue;
+		height: 6vh;
+		width: 50%;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+		margin-top: 0.7rem;
+	}
+	.foflex {
+		width: 80%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin-top: 0.7rem;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/* phone media */
+	@media only screen and (orientation: portrait) {
+		* {
+		margin: 0;
+	}
+	body {
+		background-color: #1f2641;
+	}
+
+	/* nav */
+
+	.nav {
+		width: 100%;
+		height: 11vh;
+		background-color: #2e3267;
+	}
+
+	.nav1 {
+		width: 100%;
+		height: fit-content;
+		margin: auto;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding-top: 0.6rem;
+	}
+	.nav_left {
+		display: flex;
+		align-items: center;
+		width: 15%;
+		margin-left: 0.2rem;
+	}
+	.mag {
+		height: 7vh;
+		cursor: pointer;
+	}
+	.round {
+		width: 2.5rem;
+		height: 7vh;
+		border: 2px solid blue;
+		border-radius: 50%;
+		border-color: blue;
+	}
+	.nav_right {
+		display: flex;
+		align-items: center;
+		width: 35%;
+		margin-left: 7rem;
+	}
+	.h_nav {
+		color: white;
+		font-size: 1.2rem;
+		padding-left: 0.3rem;
+		cursor: pointer;
+	}
+	.p_nav {
+		color: white;
+		font-size: 0.9rem;
+		padding-left: 0.3rem;
+		opacity: 0.2;
+		cursor: pointer;
+	}
+	.p_navs {
+		color: green;
+		font-size: 1.1rem;
+		padding-left: 0.3rem;
+		cursor: pointer;
+	}
+	.hold {
+		display: flex;
+		flex-direction: column;
+	}
+	#fac {
+		font-size: 2em;
+		color: grey;
+	}
+	.input-icons i {
+            position: absolute;
+        }
+          
+    .input-icons {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-left: 7rem;
+        margin-top: 0.4rem;
+        display: none;
+    }
+          
+    .icon {
+    	padding-top: 0.7rem;
+    	padding-left: 0.4rem;
+        font-size: 1.2rem;
+        color: white;
+        opacity: 0.5;
+        font-weight: lighter;
+        cursor: pointer;
+    }
+          
+    .in_nav {
+		width: 70%;
+		height: 9vh;
+		border: none;
+		background: #424890;
+		padding-left: 2rem;
+		font-size: 1rem;
+		opacity: 0.6;
+		color: white;
+	}
+
+
+
+
+	/* body main */
+
+	.every {
+		
+	}
+
+	.bodyleft {
+		width: 20%;
+		height: 30vh;
+		padding-left: 3rem;
+		padding-top: 2rem;
+		cursor: pointer;
+		display: none;
+	}
+	.h_body {
+		color: #424890;
+		font-size: 1.2rem;
+		font-weight: lighter;
+		opacity: 0.8;
+		cursor: pointer;
+	}
+	.h_bodys {
+		color: blue;
+		font-size: 1.1rem;
+		font-weight: lighter;
+	}
+	.h_bods {
+		color: #424890;
+		font-size: 1.2rem;
+		font-weight: lighter;
+		cursor: pointer;
+	}
+	.btns {
+		border-radius: 3px;
+		color: blue;
+		border: none;
+		background-color: #2e3267;
+		height: 6vh;
+		width: max-width;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+	}
+	.leftside {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 90%;
+		margin-top: 2rem;
+	}
+	.bt {
+		border-radius: 3px;
+		color: #424890;
+		border: none;
+		background-color: #2e3267;
+		height: 6vh;
+		width: max-width;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+	}
+
+
+
+
+
+	/* middle side */
+
+	.middleside {
+		width: 98%;
+		height: 135vh;
+		overflow-y: scroll; 
+		margin-left: 0.3rem;
+	}
+	.middleside::-webkit-scrollbar {
+		width: 0.7vw;
+	}
+	.middleside::-webkit-scrollbar-thumb {
+		background: #424890;
+	}
+	.middleside::-webkit-scrollbar-track {
+		background: #2e3267;
+	}
+	.give1 {
+		display: flex;
+		flex-direction: column;
+	}
+	.give_p {
+		color: #424890;
+		opacity: 0.7;
+		font-size: 1rem;
+	}
+	.give_h {
+		color: white;
+		opacity: 0.9;
+		font-size: 1.4rem;
+	}
+	.give {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 97%;
+		margin: auto;
+		margin-top: 2rem;
+	}
+	.bte {
+		border-radius: 3px;
+		color: #424890;
+		border: none;
+		background-color: blue;
+		height: 9vh;
+		width: max-width;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+	}
+	.give3 {
+		width: 98%;
+		height: max-content;
+		margin: auto;
+		margin-top: 2rem;
+	}
+	.givebox {
+		width: 92%;
+		height: fit-content;
+		min-height: 32vh;
+		background: #2e3267;
+		border-radius: 1rem;
+		padding-top: 0.8rem;
+		padding-left: 1.7rem;
+	}
+	.round {
+		width: 3rem;
+		height: 7vh;
+		border: none;
+		border-radius: 50%;
+		border-color: blue;
+		background-size: cover;
+	}
+	.giveflex {
+		display: flex;
+		align-items: center;
+		width: 50%;
+	}
+	.agaflex {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 95%;
+	}
+	.boxr {
+		color: white;
+		padding-top: 0.6rem;
+		font-size: 1.3rem;
+		font-weight: lighter;
+		opacity: 0.8;
+	}
+	.secbox {
+		width: 92%;
+		height: max-content;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.tiny {
+		width: 92%;
+		height: 0.4vh;
+		background: grey;
+		opacity: 0.3;
+		margin-top: 1rem;
+	}
+	.type1 {
+		display: flex;
+		align-items: center;
+		width: 50%;
+		padding-top: 0.7rem;
+		margin-right: 10rem;
+	}
+	.type {
+		width: 92%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.btu {
+		border-radius: 3px;
+		color: white;
+		border: none;
+		background-color: #424890;
+		height: 6vh;
+		width: max-width;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 2rem;
+		opacity: 0.7;
+	}
+
+	.desc {
+		width: 86%;
+		height: fit-content;
+		min-height: 5vh;
+		padding-top: 0.3rem;
+		padding-left: 0.5rem;
+		background: #1f2641;
+		margin-left: 0.3rem;
+		margin-top: 0.3rem;
+		border-radius: 0.5rem;
+	}
+
+
+	/* rightside */
+
+	.rightside {
+		width: 30%;
+		height: fit-content;
+		padding-top: 2rem;
+		display: none;
+	}
+
+	.follow {
+		width: 95%;
+		margin: 0 auto;
+		height: 70vh;
+		background: #2e3267;
+		border-radius: 1rem;
+	}
+	.follows {
+		width: 95%;
+		margin: 0 auto;
+		height: fit-content;
+		background: #2e3267;
+		border-radius: 1rem;
+	}
+	.followh {
+		width: 100%;
+		height: 10vh;
+		background-color: #424890;
+	}
+	.thr {
+		width: 80%;
+		display: flex;
+		align-items: center;
+		margin-left: 0.5rem;
+		margin-top: 0.4rem;
+	}
+	.thre {
+		width: 98%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.btes {
+		border-radius: 3px;
+		color: #424890;
+		border: none;
+		background-color: blue;
+		height: 6vh;
+		width: 20%;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+
+	}
+	.take {
+		display: flex;
+		flex-direction: column;
+		width: 94%;
+	}
+	.bas {
+		width: 94%;
+		height: fit-content;
+		border-radius: 1rem;
+		border: 1px solid blue;
+		margin-top: 1rem;
+		margin-left: 0.5rem;
+	}
+	.gain {
+		font-size: 1rem;
+		opacity: 0.9;
+		color: white;
+	}
+	.spa {
+		font-size: 1rem;
+		opacity: 0.9;
+		color: green;
+	}
+	.com {
+		width: 86%;
+		height: 5vh;
+		padding-top: 0.3rem;
+		padding-left: 0.5rem;
+		background: #1f2641;
+		margin-left: 1.2rem;
+		margin-top: 0.3rem;
+		border-radius: 0.5rem;
+	}
+
+	/* about */
+
+	.givehead {
+		width: 96%;
+		margin: auto;
+		height: fit-content;
+		margin-top: 2rem;
+	}
+	.lap1 {
+		width: 98%;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+	}
+	.lap2 {
+		width: 60%;
+	}
+	.lap3 {
+		width: 60%;
+		margin: auto;
+		margin-left: 6rem;
+	}
+	.roun {
+		width: 94%;
+		height: 25vh;
+		border-radius: 70%;
+	}
+	.boxre {
+		font-size: 1rem;
+		color: white;
+		opacity: 0.4;
+	}
+	.btese {
+		border-radius: 3px;
+		color: #424890;
+		border: none;
+		background-color: blue;
+		height: 6vh;
+		width: 50%;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+		margin-top: 0.7rem;
+		margin-left: 2rem;
+	}
+	.foflex {
+		width: 80%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin-top: 0.7rem;
+	}
+
+	}
+</style>
+<div class="nav">
+	<div class="nav1">
+		<a href="{% url 'home' %}">
+			<div class="nav_left">
+				<img src="/media/images/logo.svg" class="mag"></img>
+				<h2 class="h_nav">StudyPro</h2>
+			</div>
+		</a>
+		<div class="input-icons">
+			<i class="fa fa-search icon"></i>
+			<input type="text" class="in_nav" placeholder="search for rooms"></input>
+		</div>
+		<div class="nav_right">
+			<a href="{% url 'editprofile' %}">
+			{% for prof in prof %}
+				<div class="round" style="background: url('{{ prof.img.url }}');background-size: cover;"></div>
+			{% empty %}
+				<i class="fa fa-user-circle-o" id="fac"></i>
+			{% endfor %}
+			</a>
+			<div class="hold">
+				<p class="p_nav">{{ user }}</p>
+				<p class="p_navs">@{{ use }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+<body>
+<div class="every">
+	<div class="bodyleft">
+		<h3 class="h_body">Browse Topics</h3>
+		<div class="leftside">
+			<h4 class="h_bodys">All</h4>
+			<button class="btns">198</button>
+		</div>
+		{% for lis in lis %}
+			<div class="leftside">
+				<a href="{% url 'basedons' lis.id lis.lang %}"><h4 class="h_bods">{{ lis.lang }}</h4></a>
+				<button class="bt">Join</button>
+			</div>
+		{% endfor %}
+	</div>
+	<div class="middleside">
+		<div class="givehead">
+			<div class="lap1">
+				<div class="lap2">
+				<center>
+				{% for profe in profe %}
+					<div class="roun" style="background: url('{{ profe.img.url }}');background-size: cover;"></div>
+				{% empty %}
+					<i class="fa fa-user-circle-o" id="fac"></i>
+				{% endfor %}
+				<h3 class="boxr">{{ uses }}</h3>
+				<p class="p_navs">Host @{{ users }}</p>
+				</div>
+				<div class="lap3">
+				<form method="POST">
+					{% csrf_token %}
+					<input type="hidden" name="user" value="{{ users }}" readonly/>
+					<input type="hidden" name="follower" value="{{ request.user.username }}" readonly/>
+					{% if follow_but == 'follow' %}
+					<input type="hidden" name="value" value="follow" readonly/>
+					<button type="submit" class="btese">Follow</button>
+					{% else %}
+					<input type="hidden" name="value" value="unfollow" readonly/>
+					<button type="submit" class="btese">Unfollow</button>
+					{% endif %}
+				</form>
+				<div class="foflex">
+					<h3 class="boxre">followers: {{ user_followers }}</h3>
+					<h3 class="boxre">following: {{ user_following }}</h3>
+				</div>
+				</center>
+				</div>
+			</div>
+		</div>
+		<div class="give3">
+			<h3 class="give_p">About</h3>
+			{% for profe in profe %}
+			<h3 class="boxre">{{ profe.bio }}</p>
+			{% empty %}
+			<h3 class="boxre">No Bio Add One <a href="{% url 'edit-profile' %}">Here</a></p>
+			{% endfor %}
+			<br>
+				<h4 class="boxre">last login: {{ request.user.last_login }}</h4>
+			<br>
+			<h3 class="give_p" style="padding-top: 0.7rem;">Study Room({{ boxnum }}) Created By {{ uses }}</p>
+			{% for boxs in boxs %}
+			{% for bo in boxs.host.all %}
+			<div class="givebox" style="margin-top: 1rem;">
+				<div class="agaflex">
+					<div class="giveflex">
+						<div class="round" style="background: url('{{ bo.img.url }}');background-size: cover;"></div>
+						<p class="p_navs">Host @{{ boxs.person }}</p>
+					</div>
+					<h4 class="h_bods">{{ boxs.date }}</h4>
+				</div>
+				<a href="{% url 'message' boxs.id boxs.topic %}"><h2 class="boxr">{{ boxs.topic }}</h2></a>
+				<br>
+				<div class="desc">
+					<p class="gain">{{ boxs.description }}</p>
+				</div>
+				<div class="tiny"></div>
+				<div class="type">
+					<div class="type1">
+						<i class="fa fa-user-circle-o" id="fac"></i>
+						<h4 class="h_bods" style="padding-left: 0.3rem;">382 people Joined</h4>
+					</div>
+					<button class="btu">{{ boxs.based.lang }}</button>
+				</div>	
+			</div>
+			{% endfor %}
+
+			{% empty %}
+
+			<h3 class="boxre" style="padding-top: 0.6rem;">No Room Posted.......Post <a href="{% url 'bring' %}">Here</a></p>
+			{% endfor %}
+
+
+		</div>
+	</div>
+	<div class="rightside">
+		<div class="follow">
+			<div class="followh">
+
+			</div>
+			{% for mov in mov %}
+			<div class="thre">
+				<div class="thr">
+					<div class="round" style="background: url('{{ mov.img.url }}');background-size: cover;"></div>
+					<h3 class="h_bods">{{ mov.user }}</h3>
+				</div>
+				<button class="btes">Follow</button>
+			</div>
+			<br>
+			{% endfor %}
+		</div>	
+		<br>
+		<br>
+		<div class="follows">
+			<div class="followh">
+
+			</div>
+			{% for tall in tall %}
+			{% for mof in tall.host.all %}
+			<div class="bas">
+				<div class="thr">
+					<div class="round" style="background: url('{{ mof.img.url }}');"></div>
+					<div class="take">
+						<h3 class="p_navs">@{{ tall.people.username }}</h3>
+						<p class="h_bods">{{ tall.day }}</p>
+					</div>
+				</div>
+					<p class="gain" style="padding-left: 1.7rem;width: 60%;">Replying to "<span class="spa">{{ tall.join.topic }}</span>"</p>
+				<div class="com">
+					<p class="gain">{{ tall.text }}</p>
+				</div>
+				<br>
+			</div>
+			{% endfor %}
+			{% endfor %}
+			<br>
+		</div>
+		<br>
+	</div>
+</div>
+</body>
+
+{% endblock %}

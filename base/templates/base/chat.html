@@ -1,0 +1,619 @@
+{% extends 'base/base.html' %}
+
+{% block body %}
+<style type="text/css">
+	* {
+		margin: 0;
+	}
+	body {
+		background-color: #1f2641;
+	}
+	body::-webkit-scrollbar {
+		width: 1vw;
+	}
+	body::-webkit-scrollbar-thumb {
+		background: #424890;
+	}
+	body::-webkit-scrollbar-track {
+		background: #2e3267;
+	}
+	a {
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	/* nav */
+
+	.nav {
+		width: 100%;
+		height: 16vh;
+		background-color: #2e3267;
+	}
+
+	.nav1 {
+		width: 85%;
+		height: fit-content;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 0.6rem;
+	}
+	.nav_left {
+		display: flex;
+		align-items: center;
+		width: 25%;
+	}
+	.mag {
+		height: 7vh;
+		cursor: pointer;
+	}
+	.in_nav {
+		width: 40%;
+		height: 9vh;
+		border: none;
+		background: #424890;
+		padding-left: 2rem;
+		font-size: 0.8rem;
+		opacity: 0.7;
+	}
+	.round {
+		width: 2.5rem;
+		height: 7vh;
+		border: 2px solid blue;
+		border-radius: 50%;
+		border-color: blue;
+	}
+	.nav_right {
+		display: flex;
+		align-items: center;
+		width: 25%;
+		margin-left: 7rem;
+	}
+	.h_nav {
+		color: white;
+		font-size: 1.2rem;
+		padding-left: 0.3rem;
+		cursor: pointer;
+	}
+	.p_nav {
+		color: white;
+		font-size: 0.9rem;
+		padding-left: 0.3rem;
+		opacity: 0.2;
+		cursor: pointer;
+	}
+	.p_navs {
+		color: green;
+		font-size: 1.1rem;
+		padding-left: 0.3rem;
+		cursor: pointer;
+	}
+	.hold {
+		display: flex;
+		flex-direction: column;
+	}
+	#fac {
+		font-size: 2em;
+		color: grey;
+	}
+	.input-icons i {
+            position: absolute;
+        }
+          
+    .input-icons {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-left: 7rem;
+        margin-top: 0.4rem;
+    }
+          
+    .icon {
+    	padding-top: 0.7rem;
+    	padding-left: 0.4rem;
+        font-size: 1.2rem;
+        color: white;
+        opacity: 0.5;
+        font-weight: lighter;
+        cursor: pointer;
+    }
+    #icond {
+    	padding-top: 0.3rem;
+    	padding-left: 0.4rem;
+        font-size: 1.2rem;
+        color: white;
+        opacity: 0.5;
+        font-weight: lighter;
+        cursor: pointer;
+    }
+          
+    .in_nav {
+		width: 70%;
+		height: 9vh;
+		border: none;
+		background: #424890;
+		padding-left: 2rem;
+		font-size: 1rem;
+		opacity: 0.6;
+		color: white;
+	}
+
+	/* body main */
+	.main {
+		width: 100%;
+		height: fit-content;
+	}
+	.mainleft {
+		width: 96.5%;
+		height: 150vh;
+		margin-left: 1rem;
+		margin-top: 1rem;
+		background: #2e3267;
+	}
+	.maincover {
+		width: 100%;
+		height: 8vh;
+		background: #424890; 
+	}
+	.boxr {
+		color: blue;
+		padding-top: 0.6rem;
+		font-size: 1.6rem;
+		font-weight: lighter;
+		opacity: 0.8;
+	}
+	.mainflex {
+		width: 96%;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.secmain {
+		width: 15%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin-left: 1rem;
+		margin-top: 1rem;
+	}
+	.btu {
+		border-radius: 3px;
+		color: white;
+		border: none;
+		background-color: #424890;
+		height: 6vh;
+		width: max-width;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 2rem;
+		opacity: 0.7;
+		margin-left: 1rem;
+		margin-top: 1rem;
+	}
+
+	.chatmain {
+		width: 96%;
+		height: 66vh;
+		margin: auto;
+		background: #1f2641;
+		overflow-y: scroll;
+	}
+	.chatmain::-webkit-scrollbar {
+		width: 0.7vw;
+	}
+	.chatmain::-webkit-scrollbar-thumb {
+		background: blue;
+	}
+	.chatmain::-webkit-scrollbar-track {
+		background: #424890;
+	}
+	.thrmain {
+		width: 96%;
+		margin: auto;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.chatflex {
+		width: 45%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-left: 1rem;
+		margin-top: 1rem;
+	}
+	.sed {
+		width: 40%;
+		display: flex;
+		align-items: center;
+	}
+	.every {
+		width: max-width;
+		height: fit-content;
+		border: 1px solid;
+		border-color: #1f2641;
+		border-left-color: #2e3267;
+		margin-left: 1rem;
+		margin-top: 0.4rem;
+	}
+	.int {
+		width: 93%;
+		height: 9vh;
+		margin-left: 1rem;
+		background: #424890;
+		border: none;
+		border-radius: 2rem;
+		padding-left: 2rem;
+		margin-top: 0.5rem;
+	}
+	.hab {
+		width: max-content;
+		height: fitcontent;
+		margin-left: 0.3rem;
+		background: transparent;
+		border: none;
+		text-align: center;
+		font-size: 3rem;
+		color: white;
+		padding-top: 0.5rem;
+	}
+	.fed {
+		display: flex;
+		width: 94%;
+		margin-left: 0.7rem;
+		margin-right: 0.8rem;
+		background-color: #424890; 
+		border-radius: 1rem;
+	}
+
+	
+
+
+
+
+
+
+
+
+
+	/* phone media */
+	@media only screen and (orientation: portrait) {
+		* {
+		margin: 0;
+	}
+	body {
+		background-color: #1f2641;
+	}
+
+	/* nav */
+
+	.nav {
+		width: 100%;
+		height: 11vh;
+		background-color: #2e3267;
+	}
+
+	.nav1 {
+		width: 100%;
+		height: fit-content;
+		margin: auto;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding-top: 0.6rem;
+	}
+	.nav_left {
+		display: flex;
+		align-items: center;
+		width: 15%;
+		margin-left: 0.2rem;
+	}
+	.mag {
+		height: 7vh;
+		cursor: pointer;
+	}
+	.round {
+		width: 3.5rem;
+		height: 7vh;
+		border: 2px solid blue;
+		border-radius: 50%;
+		border-color: blue;
+	}
+	.nav_right {
+		display: flex;
+		align-items: center;
+		width: 35%;
+		margin-left: 7rem;
+	}
+	.h_nav {
+		color: white;
+		font-size: 1.2rem;
+		padding-left: 0.3rem;
+		cursor: pointer;
+	}
+	.p_nav {
+		color: white;
+		font-size: 0.9rem;
+		padding-left: 0.3rem;
+		opacity: 0.2;
+		cursor: pointer;
+	}
+	.p_navs {
+		color: green;
+		font-size: 1.1rem;
+		padding-left: 0.3rem;
+		cursor: pointer;
+	}
+	.hold {
+		display: flex;
+		flex-direction: column;
+	}
+	#fac {
+		font-size: 2em;
+		color: grey;
+	}
+	.input-icons i {
+            position: absolute;
+        }
+          
+    .input-icons {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-left: 7rem;
+        margin-top: 0.4rem;
+        display: none;
+    }
+          
+    .icon {
+    	padding-top: 0.7rem;
+    	padding-left: 0.4rem;
+        font-size: 1.2rem;
+        color: white;
+        opacity: 0.5;
+        font-weight: lighter;
+        cursor: pointer;
+    }
+    #icond {
+    	padding-top: 0.3rem;
+       	padding-left: 0.4rem;
+        font-size: 1.2rem;
+        color: white;
+        opacity: 0.5;
+        font-weight: lighter;
+        cursor: pointer;
+    }
+          
+    .in_nav {
+		width: 70%;
+		height: 9vh;
+		border: none;
+		background: #424890;
+		padding-left: 2rem;
+		font-size: 1rem;
+		opacity: 0.6;
+		color: white;
+	}
+
+	/* body main */
+	.main {
+		width: 100%;
+		height: fit-content;
+		overflow-x: hidden;
+	}
+	.mainleft {
+		margin: 0 auto;
+		width: 98%;
+		height: 150vh;
+		margin-top: 1rem;
+		background: #2e3267;
+	}
+	.maincover {
+		width: 100%;
+		height: 8vh;
+		background: #424890; 
+	}
+	.boxr {
+		color: blue;
+		padding-top: 0.6rem;
+		font-size: 1.6rem;
+		font-weight: lighter;
+		opacity: 0.8;
+	}
+	.mainflex {
+		width: 96%;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.secmain {
+		width: 40%;
+		display: flex;
+		margin-left: 0.2rem;
+		margin-top: 1rem;
+	}
+	.btu {
+		border-radius: 3px;
+		color: white;
+		border: none;
+		background-color: #424890;
+		height: 6vh;
+		width: max-width;
+		font-size: 0.9rem;
+		font-weight: 150px;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 2rem;
+		opacity: 0.7;
+		margin-left: 1rem;
+		margin-top: 1rem;
+	}
+
+	.chatmain {
+		width: 96%;
+		height: 66vh;
+		margin: auto;
+		background: #1f2641;
+		overflow-y: scroll;
+	}
+	.chatmain::-webkit-scrollbar {
+		width: 0.7vw;
+	}
+	.chatmain::-webkit-scrollbar-thumb {
+		background: blue;
+	}
+	.chatmain::-webkit-scrollbar-track {
+		background: #424890;
+	}
+	.int {
+		width: 73%;
+		height: 9vh;
+		margin-left: 0.3rem;
+		background: #424890;
+		border: none;
+		border-radius: 2rem;
+		padding-left: 2rem;
+	}
+	.hab {
+		width: max-content;
+		height: fitcontent;
+		margin-left: 0.3rem;
+		background: transparent;
+		border: none;
+		text-align: center;
+		font-size: 3rem;
+		color: white;
+		padding-top: 0.5rem;
+	}
+	.fed {
+		display: flex;
+		width: 94%;
+		margin-left: 0.7rem;
+		margin-right: 0.8rem;
+		background-color: #424890; 
+		border-radius: 1rem;
+	}
+	.thrmain {
+		width: 96%;
+		margin: auto;
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		margin-top: 0.8rem;
+	}
+	.chatflex {
+		width: 45%;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-left: 0.4rem;
+		margin-top: 1rem;
+	}
+	.sed {
+		width: 90%;
+		display: flex;
+		align-items: center;
+	}
+	.every {
+		width: max-width;
+		height: fit-content;
+		border: 1px solid;
+		border-color: #1f2641;
+		border-left-color: #2e3267;
+		margin-left: 1rem;
+		margin-top: 0.4rem;
+	}
+
+	}
+</style>
+<div class="nav">
+	<div class="nav1">
+		<a href="{% url 'home' %}">
+			<div class="nav_left">
+				<img src="/media/images/logo.svg" class="mag"></img>
+				<h2 class="h_nav">StudyPro</h2>
+			</div>
+		</a>
+		<div class="input-icons">
+			<i class="fa fa-search icon"></i>
+			<input type="text" class="in_nav" placeholder="search for rooms"></input>
+		</div>
+		<div class="nav_right">
+			<a href="{% url 'editprofile' %}">
+			{% for prof in prof %}
+				<div class="round" style="background: url('{{ prof.img.url }}');background-size: cover;"></div>
+			{% empty %}
+				<i class="fa fa-user-circle-o" id="fac"></i>
+			{% endfor %}
+			</a>
+			<div class="hold">
+				<p class="p_nav">{{ user }}</p>
+				<p class="p_navs">@{{ use }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+<body>
+<div class="main">
+	<div class="mainleft">
+		<div class="maincover">
+
+		</div>	
+		<div class="mainflex">
+			<h2 class="boxr">{{ alk.topic }}</h2>
+			<h4 class="p_nav">{{ alk.date }}</h4>
+		</div>
+		<h4 class="p_nav" style="padding-left: 1rem;padding-top: 1rem;">Hosted By</h4>
+		<div class="secmain">
+		{% for bo in alk.host.all %}
+			<div class="round" style="background: url('{{ bo.img.url }}');background-size: cover;"></div>
+			<a href="{% url 'profiles' bo.user.username bo.user.first_name bo.user.id %}"><h4 class="p_navs">@{{ alk.person }}</h4></a>
+		{% endfor %}
+		</div>
+		<h4 class="p_nav" style="padding-left: 1rem;padding-top: 1rem;">Top Participants</h4>
+		<div class="thrmain">
+		{% for tap in tap %}
+		{% for bol in tap.host.all %}
+			<div class="round" style="background: url('{{ bol.img.url }}');background-size: cover;"></div>
+		{% endfor %}
+		{% endfor %}
+		</div>
+		<button class="btu">{{ alk.based.lang }}</button>
+		<br>
+		<br>
+
+		<div class="chatmain">
+		{% for tap in tap %}
+		{% for bol in tap.host.all %}
+			<div class="every">
+				<div class="chatflex">
+					<div class="sed">
+						<div class="round" style="background: url('{{ bol.img.url }}');background-size: cover;"></div>
+						<a href="{% url 'profiles' tap.people.username tap.people.first_name tap.people.id %}"><h4 class="p_navs">@{{ tap.people }}</h4></a>
+					</div>
+					<h4 class="p_nav">{{ tap.day }}</h4>
+				</div>
+				<h3 class="p_nav" style="padding-left: 1.4rem;padding-top: 0.3rem;">{{ tap.text }}</h3>
+				<br>
+			</div>
+		{% endfor %}
+		{% endfor %}
+		</div>
+		{% for prof in prof %}
+		<form action="{% url 'sec' alk.id %}" method="post">
+			{% csrf_token %}
+			<div class="fed">
+				<input type="text" class="int" placeholder="Write your message......." name="comm">
+				<a href="{% url 'sec' alk.id %}"><button type="submit" name="prof_id" value="{{ prof.id }}" class="hab"><i class="fa fa-paper-plane" id="icond"></i></button></a>
+			</div>
+		</form>
+		{% endfor %}
+	</div>
+</div>
+</body>
+{% endblock %}
+<i class="fa fa-search icon"></i>
