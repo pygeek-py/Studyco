@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-+w1*zq8)xi_88&74&$b24pz2ikxqma+5h!4&ho-q33)dv0m!yl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 EMAIL_HOST = 'smtp.gmail.com'
@@ -96,10 +96,10 @@ WSGI_APPLICATION = 'study.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    #'default': {
+     #   'ENGINE': 'django.db.backends.sqlite3',
+      #  'NAME': BASE_DIR / 'db.sqlite3',
+    #}
 }
 
 
@@ -171,3 +171,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SOCIAL_AUTH_FACEBOOK_KEY = '549328026977976'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = 'f58d438ce680855ca9fc050fe3fdb539'
 django_heroku.settings(locals())
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
