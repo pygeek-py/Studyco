@@ -27,6 +27,7 @@ pytz==2022.1
 s3transfer==0.5.2
 six==1.16.0
 sqlparse==0.4.2
+social-auth-app-django==5.0.0
 typing-extensions==4.1.1
 urllib3==1.26.13
 whitenoise==5.3.0
