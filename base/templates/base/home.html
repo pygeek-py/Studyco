@@ -71,7 +71,7 @@
 		display: flex;
 		align-items: center;
 		width: 25%;
-		margin-left: 7rem;
+		margin-left: 19rem;
 	}
 	.h_nav {
 		color: white;
@@ -130,6 +130,8 @@
 		font-size: 1rem;
 		opacity: 0.6;
 		color: white;
+		border-radius: 1rem;
+		margin-left: 7rem;
 	}
 
 	/* body main */
@@ -258,7 +260,7 @@
 	}
 	.givebox {
 		width: 92%;
-		height: fit-content;
+		height: 35vh;
 		background: #2e3267;
 		border-radius: 1rem;
 		padding-top: 0.8rem;
@@ -551,7 +553,7 @@
 		display: flex;
 		align-items: center;
 		width: 35%;
-		margin-left: 7rem;
+		margin-left: 5rem;
 	}
 	.h_nav {
 		color: white;
@@ -764,7 +766,7 @@
 	}
 	.givebox {
 		width: 92%;
-		height: fit-content;
+		height: 15rem;
 		min-height: 32vh;
 		background: #2e3267;
 		border-radius: 1rem;
@@ -1031,7 +1033,7 @@
 			</div>
 		</a>
 		<div class="input-icons">
-			<i class="fa fa-search icon"></i>
+			
 			<form method="get">
 				{% csrf_token %}
     			{{ filter.form.topic }}
@@ -1055,7 +1057,7 @@
 			</a>
 			<div class="hold">
 				<p class="p_nav">{{ user }}</p>
-				<a href="{% url 'profiles' request.user.username request.user.first_name request.user.id %}"><p class="p_navs">@{{ use }}</p></a>
+				<a href="{% url 'editprofile' %}"><p class="p_navs">@{{ use }}</p></a>
 			</div>
 			<i class="fa fa-angle-down" onclick="navclick()" id="sees"></i>
 			<i class="fa fa-angle-up" onclick="navclicks()" id="see" style="display: none;"></i>
@@ -1128,7 +1130,7 @@
 						<i class="fa fa-user-circle-o" id="fac"></i>
 						<h4 class="h_bods" style="padding-left: 0.3rem;">10 people Joined</h4>
 					</div>
-					<i class="fa fa-clone" aria-hidden"true" style="font-size: 1.5rem;color: green;" onClick="copy('boy')"></i>
+					<i class="fa fa-clone" aria-hidden"true" style="font-size: 1.5rem;color: green;" onClick="copy('Invalid')"></i>
 				</div>	
 			</div>
 			{% endfor %}

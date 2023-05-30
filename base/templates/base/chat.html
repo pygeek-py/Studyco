@@ -68,7 +68,7 @@
 		display: flex;
 		align-items: center;
 		width: 25%;
-		margin-left: 7rem;
+		margin-left: 12rem;
 	}
 	.h_nav {
 		color: white;
@@ -136,6 +136,8 @@
 		font-size: 1rem;
 		opacity: 0.6;
 		color: white;
+		border-radius: 1rem;
+		margin-left: 7rem;
 	}
 
 	/* body main */
@@ -170,7 +172,7 @@
 		align-items: center;
 	}
 	.secmain {
-		width: 15%;
+		width: 7%;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
@@ -218,7 +220,7 @@
 		align-items: center;
 	}
 	.chatflex {
-		width: 45%;
+		width: 26%;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
@@ -253,18 +255,18 @@
 	.hab {
 		width: max-content;
 		height: fitcontent;
-		margin-left: 0.3rem;
+		margin-left: 0rem;
 		background: transparent;
 		border: none;
 		text-align: center;
 		font-size: 3rem;
 		color: white;
-		padding-top: 0.5rem;
+		padding-top: 0rem;
 	}
 	.fed {
 		display: flex;
 		width: 94%;
-		margin-left: 0.7rem;
+		margin-left: 2.5rem;
 		margin-right: 0.8rem;
 		background-color: #424890; 
 		border-radius: 1rem;
@@ -539,7 +541,7 @@
 			</div>
 		</a>
 		<div class="input-icons">
-			<i class="fa fa-search icon"></i>
+			
 			<input type="text" class="in_nav" placeholder="search for rooms"></input>
 		</div>
 		<div class="nav_right">
@@ -574,14 +576,7 @@
 			<a href="{% url 'profiles' bo.user.username bo.user.first_name bo.user.id %}"><h4 class="p_navs">@{{ alk.person }}</h4></a>
 		{% endfor %}
 		</div>
-		<h4 class="p_nav" style="padding-left: 1rem;padding-top: 1rem;">Top Participants</h4>
-		<div class="thrmain">
-		{% for tap in tap %}
-		{% for bol in tap.host.all %}
-			<div class="round" style="background: url('{{ bol.img.url }}');background-size: cover;"></div>
-		{% endfor %}
-		{% endfor %}
-		</div>
+		
 		<button class="btu">{{ alk.based.lang }}</button>
 		<br>
 		<br>

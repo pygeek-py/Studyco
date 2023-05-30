@@ -162,6 +162,7 @@
 		opacity: 0.6;
 		padding-left: 1.8rem;
 		color: white;
+		border-radius: 1rem;
 	}
 
 
@@ -209,6 +210,12 @@
 	.pad {
 		color: green;
 		opacity: 0.8;
+	}
+	#pads {
+		color: white;
+		opacity: 0.5;
+		padding: 1em;
+		width: 90%;
 	}
 	input {
 		width: 70%;
@@ -281,7 +288,7 @@
 		display: flex;
 		align-items: center;
 		width: 35%;
-		margin-left: 7rem;
+		margin-left: 13rem;
 	}
 	.h_nav {
 		color: white;
@@ -342,7 +349,7 @@
 			<h2 class="h_nav">StudyPro</h2>
 		</div>
 		<div class="input-icons">
-			<i class="fa fa-search icon"></i>
+			
 			<input type="text" class="in_nav" placeholder="search for rooms"></input>
 		</div>
 		<div class="nav_right">
@@ -361,7 +368,7 @@
 	<p class="pad">Find Your Study Partner</p>
 </center>
 <div>
-{{ message }}
+{{ massage }}
 </div>
 <form method="post">
     {% csrf_token %}
@@ -393,5 +400,8 @@
 	<a href="{% url 'login' %}" class="her">login</a>
 </center>
 </div>
+<script>
+	alert('Username and Password Must Not have any space and They are Case Sensitive')
+</script>
 </body>
 {% endblock %}

@@ -157,11 +157,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-AWS_QUERYSTRING_AUTH = False
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_ACCESS_KEY_ID = 'AKIAW4ORLIWQ7HDR7YFM'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'moviemaxz'
+#AWS_QUERYSTRING_AUTH = False
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#AWS_ACCESS_KEY_ID = 'AKIAW4ORLIWQ7HDR7YFM'
+#AWS_SECRET_ACCESS_KEY = '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'
+#AWS_STORAGE_BUCKET_NAME = 'moviemaxz'
 
 
 # Default primary key field type
@@ -172,5 +172,5 @@ SOCIAL_AUTH_FACEBOOK_KEY = '549328026977976'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = 'f58d438ce680855ca9fc050fe3fdb539'
 django_heroku.settings(locals())
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
